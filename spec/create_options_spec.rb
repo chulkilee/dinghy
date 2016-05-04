@@ -5,6 +5,7 @@ RSpec.describe Machine::CreateOptions do
       '--virtualbox-memory', MEM_DEFAULT.to_s,
       '--virtualbox-cpu-count', CPU_DEFAULT.to_s,
       '--virtualbox-disk-size', DISK_DEFAULT.to_s,
+      '--virtualbox-host-dns-resolver',
       '--virtualbox-no-share',
     ])
   end

@@ -5,6 +5,7 @@ module Machine::CreateOptions
       cpus: '--virtualbox-cpu-count',
       disk: '--virtualbox-disk-size',
       no_share: '--virtualbox-no-share',
+      host_dns: '--virtualbox-host-dns-resolver',
       boot2docker_url: '--virtualbox-boot2docker-url'
     }.freeze,
 
@@ -39,6 +40,7 @@ module Machine::CreateOptions
       flags[:memory], (options['memory'] || MEM_DEFAULT).to_s,
       flags[:cpus], (options['cpus'] || CPU_DEFAULT).to_s,
       flags[:disk], (options['disk'] || DISK_DEFAULT).to_s,
+      flags[:host_dns],
       flags[:no_share]
     ].compact.tap do |create_options|
       unless options['boot2docker_url'].nil?
